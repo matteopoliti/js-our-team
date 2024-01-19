@@ -42,11 +42,21 @@ const membriTeam = [
       ruolo: "Graphic Designer",
       foto: "barbara-ramos-graphic-designer.jpg"
     }
-  ];
+];
   
-  // Esempio di utilizzo
-  let risultatoHtml = document.getElementById("risultato") // Stampa le informazioni sul primo membro del team
-  for(i = 0; i < membriTeam.length; i++){
 
-      risultatoHtml.innerHTML += `Il nome è ${membriTeam[i].nome}, il ruolo è ${membriTeam[i].ruolo}, la foto è ${membriTeam[i].foto}. `;
-  }
+let risultatoHtml = document.getElementById("risultato") 
+
+for(i = 0; i < membriTeam.length; i++){
+
+    risultatoHtml.innerHTML += `
+    <div class="card col m-3 p-0" style="width: 18rem">
+        <img src="./assets/img/${membriTeam[i].foto}" class="card-img-top" alt="${membriTeam[i].nome}">
+        <div class="card-body">
+            <h5 class="card-title">${membriTeam[i].nome}</h5>
+            <p class="card-text">${membriTeam[i].ruolo}</p>
+        </div>
+    </div>
+    `
+}
+
